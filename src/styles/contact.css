@@ -1,0 +1,10 @@
+/* Contact page specific styles */
+.contact-column {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .contact-column {
+    margin-bottom: 0;
+  }
+}

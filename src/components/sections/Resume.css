@@ -1,0 +1,114 @@
+/* Resume Section Styles */
+
+/* Image Gallery Styles */
+.card-images-gallery {
+  margin-top: 25px;
+  width: 100%;
+}
+
+.card-images-gallery h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 500;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 8px;
+}
+
+.card-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.gallery-item {
+  width: calc(33.333% - 10px);
+  max-width: 300px;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.zoom-icon {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .zoom-icon {
+  transform: scale(1);
+}
+
+.zoom-icon i {
+  font-size: 1.2rem;
+}
+
+/* Responsive design for gallery */
+@media (max-width: 992px) {
+  .gallery-item {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-item {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .card-images {
+    gap: 10px;
+  }
+}

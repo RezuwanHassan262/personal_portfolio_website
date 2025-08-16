@@ -1,0 +1,870 @@
+/*--------------------------------------------------------------
+# Font & Color Variables
+--------------------------------------------------------------*/
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+  
+  /* Global Colors */
+  --background-color: #000000;
+  --default-color: #fafafa;
+  --heading-color: #ffffff;
+  --accent-color: #1cb5ea;
+  --surface-color: #1a1a1a;
+  --contrast-color: #000000;
+  
+  /* Nav Menu Colors */
+  --nav-color: #fafafa;
+  --nav-hover-color: #1cb5ea;
+  --nav-mobile-background-color: #1a1a1a;
+  --nav-dropdown-background-color: #1a1a1a;
+  --nav-dropdown-color: #fafafa;
+  --nav-dropdown-hover-color: #1cb5ea;
+}
+
+/* Color Presets */
+.light-background {
+  --background-color: #1a1a1a;
+  --surface-color: #343434;
+}
+
+.dark-background {
+  --background-color: rgba(15, 15, 15, 0.975);
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #292929f9;
+  --contrast-color: #000000;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/*--------------------------------------------------------------
+# Header & Navigation
+--------------------------------------------------------------*/
+.header {
+  transition: all 0.5s;
+  z-index: 997;
+  height: 90px;
+  background-color: var(--background-color);
+}
+
+.header .logo {
+  line-height: 0;
+}
+
+.header .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+.scrolled .header {
+  background-color: var(--background-color);
+}
+
+.navmenu {
+  margin-left: auto !important;
+}
+
+.navmenu a {
+  color: var(--nav-color) !important;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navmenu a.active,
+.navmenu a:focus,
+.navmenu a:hover {
+  color: var(--nav-hover-color) !important;
+}
+
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu > ul > li {
+    white-space: nowrap;
+    padding: 10px 0 10px 28px;
+  }
+
+  .navmenu > ul > li:last-child {
+    padding-right: 0;
+  }
+
+  .navmenu a,
+  .navmenu > .sf-menu > li > a {
+    display: flex;
+    align-items: center;
+    color: var(--nav-color);
+    padding: 10px 0;
+    font-family: var(--nav-font);
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu > .sf-menu > li > a i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+
+  .navmenu > ul > li > a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .navmenu a:hover:before,
+  .navmenu li:hover > a:before,
+  .navmenu .active:before {
+    visibility: visible;
+    width: 100%;
+  }
+
+  .navmenu li:hover > a,
+  .navmenu .active,
+  .navmenu .active:focus,
+  .navmenu li:hover > a:focus {
+    color: var(--nav-hover-color);
+  }
+
+  .navmenu .dropdown ul {
+    margin: 0;
+    padding: 10px 0;
+    background-color: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 14px;
+    top: 100%;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 4px;
+    z-index: 99;
+  }
+
+  .navmenu .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    font-weight: 400;
+    color: var(--nav-dropdown-color);
+  }
+
+  .navmenu .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover > a {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .dropdown:hover > ul {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: 90%;
+  }
+
+  .navmenu .dropdown .dropdown:hover > ul {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    display: block;
+    line-height: 0;
+    transition: 0.5s;
+    cursor: pointer;
+    color: var(--nav-color);
+    font-size: 28px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+  }
+
+  .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+  }
+
+  .navmenu > ul {
+    display: block;
+  }
+
+  .navmenu ul,
+  .navmenu ul > li {
+    padding-right: 0;
+  }
+
+  .navmenu ul .nav-link {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: var(--nav-color);
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+  }
+
+  .navmenu ul .nav-link:focus,
+  .navmenu ul .nav-link:hover {
+    color: var(--nav-hover-color);
+  }
+
+  .navmenu ul .nav-link i,
+  .navmenu ul .nav-link:focus i,
+  .navmenu ul .nav-link:hover i {
+    color: var(--nav-hover-color);
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+
+  .navmenu ul .nav-link i:hover,
+  .navmenu ul .nav-link:focus i:hover,
+  .navmenu ul .nav-link:hover i:hover {
+    color: var(--nav-color);
+    background: var(--nav-hover-color);
+  }
+
+  .navmenu ul .nav-link:hover,
+  .navmenu ul .nav-link:focus,
+  .navmenu ul .nav-link:active {
+    color: var(--nav-hover-color);
+  }
+
+  .navmenu ul .active i,
+  .navmenu ul .active:focus i,
+  .navmenu ul .active:hover i {
+    color: var(--nav-color);
+    background: var(--nav-hover-color);
+  }
+
+  .navmenu .dropdown ul {
+    position: static;
+    display: block;
+    margin: 5px 20px;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 1;
+    visibility: visible;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navmenu .dropdown ul ul {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .navmenu .dropdown > .dropdown-active {
+    display: block;
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+
+  .mobile-nav-active .mobile-nav-toggle {
+    color: var(--nav-color);
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9999;
+    background-color: var(--nav-mobile-background-color);
+    border-radius: 50px;
+    padding: 6px;
+  }
+
+  .mobile-nav-active .navmenu {
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 9997;
+    position: fixed;
+    inset: 0;
+    padding: 50px 0 0 0;
+  }
+
+  .mobile-nav-active .navmenu > ul {
+    display: block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+/* Footer styles are now in main.css */
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid var(--accent-color);
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background: rgba(28, 181, 234, 0.8);
+  color: #fff;
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0s !important;
+  }
+}
+
+/* Page Title styles are now in main.css */
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+@media (max-width: 1199px) {
+  section,
+  .section {
+    padding: 60px 0;
+    overflow: hidden;
+  }
+}
+
+/* Section Title styles are now in main.css */
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  background-size: cover;
+  position: relative;
+  padding: 120px 0 60px 0;
+}
+
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h2 {
+  color: var(--heading-color);
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero p {
+  color: var(--default-color);
+  margin: 0 0 50px 0;
+  font-size: 20px;
+}
+
+.hero p span {
+  color: var(--accent-color);
+  padding-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.hero .social-links {
+  margin-top: 30px;
+}
+
+.hero .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: rgba(28, 181, 234, 0.8);
+  color: #fff;
+  margin-right: 4px;
+  transition: 0.3s;
+}
+
+.hero .social-links a:hover {
+  background: #20BEFF;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .content h2 {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font);
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding: 0 0 8px 26px;
+  position: relative;
+}
+
+.about .content ul strong {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.about .content ul i {
+  line-height: 0;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  font-size: 20px;
+  margin-right: 15px;
+  color: var(--accent-color);
+}
+
+/* Skills and Interests styles are now in main.css */
+
+/* Resume styles are now in main.css */
+
+/* Services styles are now in main.css */
+
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio .portfolio-filters {
+  padding: 0;
+  margin: 0 auto 25px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio .portfolio-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 4px 8px 4px;
+  line-height: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-filters li:first-child {
+  margin-left: 0;
+}
+
+.portfolio .portfolio-filters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+  }
+}
+
+.portfolio .portfolio-content {
+  margin-top: 30px;
+}
+
+.portfolio .portfolio-content img {
+  width: 100%;
+  height: auto;
+}
+
+.portfolio .portfolio-content .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+}
+
+.portfolio .portfolio-content .portfolio-info h4 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.portfolio .portfolio-content .portfolio-info p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s all ease-in-out 0.3s;
+}
+
+.portfolio .portfolio-content .portfolio-info .preview-link,
+.portfolio .portfolio-content .portfolio-info .details-link {
+  position: absolute;
+  right: 40px;
+  font-size: 20px;
+  top: calc(50% - 18px);
+  color: #fff;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.portfolio .portfolio-content .portfolio-info .preview-link:hover,
+.portfolio .portfolio-content .portfolio-info .details-link:hover {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-content .portfolio-info .details-link {
+  right: 10px;
+}
+
+.portfolio .portfolio-content:hover .portfolio-info {
+  opacity: 1;
+}
+
+.portfolio .portfolio-content:hover img {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-item {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 30px;
+  height: 100%;
+}
+
+.contact .info-item .icon {
+  text-align: center;
+  width: 56px;
+  height: 56px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 0;
+}
+
+.contact .info-item h3 {
+  font-size: 20px;
+  color: var(--heading-color);
+  font-weight: 700;
+  margin: 0 0 15px 0;
+}
+
+.contact .info-item p {
+  color: var(--default-color);
+  font-size: 14px;
+  line-height: 26px;
+  margin: 0;
+}
+
+.contact .info-item .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--default-color);
+  margin-right: 4px;
+  transition: 0.3s;
+}
+
+.contact .info-item .social-links a:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.contact .php-email-form {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 30px;
+}
+
+@media (max-width: 575px) {
+  .contact .php-email-form {
+    padding: 20px;
+  }
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form input[type=url],
+.contact .php-email-form textarea {
+  border: 0;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--default-color);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form input[type=url]:focus,
+.contact .php-email-form textarea:focus {
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form input[type=url]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.contact .php-email-form button[type=submit] {
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: rgba(28, 181, 234, 0.8);
+}
+
+/* Custom styles for social links */
+.social-links a {
+  background: rgba(28, 181, 234, 0.8) !important;
+  color: #fff !important;
+}
+
+.social-links a:hover {
+  background: #20BEFF !important;
+  color: #fff !important;
+}
+
+/* Style for footer links */
+.credits a {
+  color: #20BEFF !important;
+}
+
+/* Typed cursor animation */
+.typed-cursor {
+  opacity: 1;
+  animation: typedjsBlink 0.7s infinite;
+  -webkit-animation: typedjsBlink 0.7s infinite;
+  animation: typedjsBlink 0.7s infinite;
+}
+
+@keyframes typedjsBlink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.typed-cursor.typed-cursor--blink {
+  animation: typedjsBlink 0.7s infinite;
+  -webkit-animation: typedjsBlink 0.7s infinite;
+}
+
+.sitename {
+  font-family: var(--signature-font) !important;
+  color: #20BEFF !important;
+  font-weight: bold !important;
+  font-size: 70px !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+  display: block !important;
+}
+
+@media (max-width: 575px) {
+  .sitename {
+    font-size: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .sitename {
+    font-size: 45px !important;
+  }
+}

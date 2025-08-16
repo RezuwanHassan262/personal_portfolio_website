@@ -1,0 +1,46 @@
+/* Custom styles for Resume section */
+.organization {
+  display: block;
+}
+
+.date-line {
+  display: block !important;
+  margin-top: 8px !important;
+  font-style: italic !important;
+  color: #666 !important;
+}
+
+/* Specific styling for achievement dates */
+[data-tab="achievements"] .card-short-description div:last-child,
+[data-tab="achievements"] .date-line,
+.achievement-section .card-short-description div:last-child,
+.achievement-section .card-short-description div + div {
+  font-style: italic !important;
+  color: #444 !important;
+  font-weight: 500 !important;
+  display: block !important;
+  margin-top: 8px !important;
+  line-height: 1.4 !important;
+}
+
+/* Force proper date styling */
+.card-short-description pre {
+  font-family: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: pre-line !important;
+  line-height: 1.5 !important;
+  font-size: 0.95rem !important;
+  color: inherit !important;
+  background: none !important;
+  border: none !important;
+}
+
+/* Make sure "May 2025" and other dates appear on a new line */
+.card-short-description pre span:last-child,
+.card-short-description pre br + span {
+  display: block !important;
+  margin-top: 5px !important;
+  font-style: italic !important;
+  color: #666 !important;
+}

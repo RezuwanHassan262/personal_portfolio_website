@@ -1,0 +1,231 @@
+.portfolio-link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+  opacity: 0.95;
+}
+
+.features-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+}
+
+.features-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+}
+
+.features-item h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.features-item p {
+  flex: 1;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.features-item .icon {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.03);
+}
+
+#hobbies .row {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Equal height and width cards with proper spacing */
+#hobbies .col-lg-4,
+#hobbies .col-md-6 {
+  margin-bottom: 25px;
+  display: flex;
+  flex: 0 0 auto;
+  width: 33.333333%;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  #hobbies .col-lg-4,
+  #hobbies .col-md-6 {
+    width: 33.333333%;
+  }
+}
+
+@media (max-width: 992px) {
+  #hobbies .col-lg-4,
+  #hobbies .col-md-6 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-item {
+    padding: 20px 15px !important;
+    min-height: 280px;
+  }
+  
+  .portfolio-link-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  #hobbies .col-lg-4,
+  #hobbies .col-md-6 {
+    margin-bottom: 20px;
+    width: 50%;
+  }
+}
+
+/* Better spacing on smaller screens */
+/* Portfolio section styles */
+.portfolio-section {
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.portfolio-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+.portfolio-title:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: #149ddd;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.portfolio-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.portfolio-link {
+  transition: all 0.3s ease;
+}
+
+.portfolio-link img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: grayscale(0.3);
+  transition: all 0.3s ease;
+}
+
+.portfolio-link:hover img {
+  transform: translateY(-5px);
+  filter: grayscale(0);
+}
+
+/* Responsive adjustments for portfolio links */
+@media (max-width: 768px) {
+  .portfolio-links {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-section {
+    margin-top: 40px;
+  }
+  
+  .portfolio-links {
+    gap: 15px;
+  }
+  
+  .portfolio-link img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .features-item {
+    min-height: 260px;
+  }
+
+  .features-item h3 {
+    font-size: 1.2rem;
+  }
+  
+  .features-item .icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .features-item p {
+    font-size: 0.85rem !important;
+  }
+  
+  #hobbies .col-lg-4,
+  #hobbies .col-md-6 {
+    width: 100%;
+  }
+}
+
+/* Animation for the portfolio link */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.portfolio-link-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-link-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.6s;
+}
+
+.portfolio-link-button:hover::before {
+  left: 100%;
+}
+
+.portfolio-link-button:active {
+  transform: scale(0.95);
+}
+
+/* Add animation to the arrow */
+.portfolio-link-button:hover i {
+  animation: slideRight 0.5s forwards;
+}
+
+@keyframes slideRight {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}

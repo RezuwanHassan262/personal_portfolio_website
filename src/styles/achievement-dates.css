@@ -1,0 +1,7 @@
+.achievement-section .card-short-description div:last-child {
+  font-style: italic !important;
+  color: #444 !important;
+  font-weight: 500 !important;
+  margin-top: 8px !important;
+  display: block !important;
+}
