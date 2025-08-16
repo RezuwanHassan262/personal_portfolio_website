@@ -246,8 +246,8 @@ const Projects: React.FC = () => {
       description: 'My personal portfolio website showcasing my projects and skills.',
       technologies: ['React', 'TypeScript', 'CSS'],
       links: {
-        github: 'https://github.com/RezuwanHassan262/Portfolio',
-        demo: 'https://rezuwan-portfolio.vercel.app/'
+        github: 'https://github.com/RezuwanHassan262/personal_portfolio_website',
+        demo: 'https://rezuwan262.vercel.app/'
       },
       year: '2025'
     },

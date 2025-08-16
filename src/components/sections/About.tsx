@@ -82,7 +82,7 @@ const AboutSection: React.FC = () => {
                 }}>
                   {[
                     { label: 'Birthday', value: '20 August, 1995' },
-                    { label: 'Website', value: 'mrh262.netlify.app' },
+                    { label: 'Website', value: 'https://rezuwan262.vercel.app/' },
                     { label: 'Phone/WhatsApp', value: '+8801735066946' },
                     { label: 'City', value: 'Dhaka, Bangladesh' }
                   ].map((item, index) => (
