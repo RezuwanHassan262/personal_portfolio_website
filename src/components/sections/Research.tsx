@@ -23,7 +23,8 @@ const ResearchSection: React.FC = () => {
     { id: 'power', name: 'Power Distribution System' },
     { id: 'agentic', name: 'Agentic AI' },
     { id: 'agriculture', name: 'Smart Agriculture' },
-    { id: 'nlp', name: 'NLP' }
+    { id: 'nlp', name: 'NLP' },
+    { id: 'bnlp', name: 'Bangla NLP' }
   ];
 
   const toggleCardExpansion = (cardId: number) => {
@@ -66,7 +67,7 @@ const ResearchSection: React.FC = () => {
       link: "https://www.researchgate.net/publication/392194862_AgriBuddy_An_Agentic_AI_System_for_Bangladeshi_Agriculture_Using_RAG_and_Vision_Models",
       description: "Bangladesh's agriculture sector faces pressing challenges from climate variability, limited rural expert access, and the need for real-time, personalized farming advice. This paper presents AgriBuddy, an AI-powered, agent-based system that delivers localized agricultural recommendations in natural Bangla dialogue. AgriBuddy combines a Retrieval-Augmented Generation framework with specialized agents—Smart Query Handler, User Memory Agent, and Expert Advisory Agent—and a CNN-based vision module for rice disease detection. It draws on structured and unstructured data, including BRRI crop variants, community-sourced disease images, and advisory texts. Designed as a mobile-first chatbot, AgriBuddy lets farmers ask questions, share images, and receive actionable guidance. Early deployment shows strong accuracy in disease classification and high relevance in responses. We describe the system's design, architecture, and deployment, and outline future enhancements such as voice interaction, IoT integration, and real-time climate adaptation. With contributors' consent, a project overview video and source repository have been released on YouTube and GitHub as open-source resources.",
       type: "Technical Report",
-      categories: ["agentic", "agriculture"]
+      categories: ["bnlp","agentic", "agriculture"]
     },
     {
       id: 4,
@@ -77,7 +78,7 @@ const ResearchSection: React.FC = () => {
       link: "https://openreview.net/forum?id=W9gVRjWL8e&referrer=%5Bthe+profile+of+Farig+Sadeque%5D%28%2Fprofile%3Fid%3D%7EFarig_Sadeque1%29",
       description: "The International Phonetic Alphabet (IPA) serves to systematize phonemes in language, enabling precise textual representation of pronunciation. In Bengali phonology and phonetics, ongoing scholarly deliberations persist concerning the IPA standard and core Bengali phonemes. This work examines prior research, identifies current and potential issues, and suggests a framework for a Bengali IPA standard, facilitating linguistic analysis and NLP resource creation and downstream technology development. In this work, we present a comprehensive study of Bengali IPA transcription and introduce a novel IPA transcription framework incorporating a novel dataset with DL-based benchmarks.",
       type: "Preprint",
-      categories: ["nlp"]
+      categories: ["bnlp","nlp"]
     },
     {
       id: 5,
@@ -88,7 +89,7 @@ const ResearchSection: React.FC = () => {
       link: "https://dspace.bracu.ac.bd/xmlui/handle/10361/25982",
       description: "The Bengali language, spoken in various regions of south-Asia and also among the Bengali diaspora, exhibits rich diversity with regional dialects or variations that reflect the cultural, geographic, and historical influences of different regional/sociocultural communities. Based on phonology and pronunciation, Bengali is said to have 5 distinct major dialectal variations, such as Eastern Bengali Dialect, Manbhumi, Rangpuri, Varendri, and Rarhi. For the dialects present in Bangladesh, even finer stratification can be done based on the used vocabulary, pronunciation, phonology, syntax, and morphology.These regional Bengali dialects are found in regions such as Bangladesh in the regions of Chittagong, Sylhet, Rangpur, Rajshahi, Noakhali, Barishal, etc possess unique phonetic, lexical, and syntactic features that set them apart from standard Bengali and also unique from each other. However, research and resources dedicated to understanding and harnessing the potential of natural language processing of regional Bengali languages remain limited. To bridge this gap, this work aims to investigate and document the characteristics of regional Bengali languages through comprehensive data-driven linguistic analyses, including phonetic and morphological studies. We also aim to study the feasibility of developing computational models, including Automatic Speech Recognition (ASR) systems, tailored to regional Bengali languages, which can facilitate applications like virtual voice command assistants and language processing tools. Our research findings will contribute to the understanding of regional Bengali languages, paving the way to foster the advancement of language technologies that can cater to the diverse linguistic needs of Bengali-speaking communities. Through this study, we intend to promote preservation of the regional dialects of the Bengali language, foster cultural inclusivity, and facilitate effective communication in the Bengali-speaking regions.",
       type: "Thesis",
-      categories: ["nlp"]
+      categories: ["bnlp","nlp"]
     },
     {
       id: 6,

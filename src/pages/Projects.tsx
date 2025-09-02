@@ -42,6 +42,9 @@ const Projects: React.FC = () => {
     { id: 'ws', name: 'Web Scraping' },
     { id: 'hmai', name: 'Healthcare/Medical AI' },
     { id: 'ost', name: 'Open-Source Tools' },
+    { id: 'bnlp', name: 'Bangla NLP'},
+    { id: 'spch', name: 'Speech NLP'}
+
   ];
 
   const projects: Project[] = [
@@ -102,8 +105,8 @@ const Projects: React.FC = () => {
     {
       id: 5,
       title: 'Prototype system design of Bengali humor in Unmad style',
-      category: ['nlp', 'hci'],
-      image: 'https://scontent.fdac99-1.fna.fbcdn.net/v/t39.30808-6/354043071_653375850167696_1862718270923061923_n.png?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEqAv1rfv2dPcnjWYi5nvmBTxwXMXVvXzdPHBcxdW9fNxwAb_2ooqwqkcW-dpcsd40&_nc_ohc=_gZl81q1rVsQ7kNvwGQgfww&_nc_oc=Admjzv8w_jOt325yrRvaQg19r9NkfQOfDs0gKx9KfNwUsCHw2RhyF-l9MiWn2PHDJD4&_nc_zt=23&_nc_ht=scontent.fdac99-1.fna&_nc_gid=C18AXTv03ruAl7bkyM2NWg&oh=00_AfXABGPTcwPsEzGK5bF5syJ5pRDG9Bjx9KlQxp_Jxpsnvw&oe=68A44733',
+      category: ['bnlp', 'nlp', 'hci'],
+      image: "/assets/img/others/ss2.PNG",
       description: 'A Bangla satirical chatbot inspired by Unmad magazine\'s comedic, sarcastic writing style. It takes a user\'s question, retrieves relevant Bangla text snippets from a knowledge base, and answers with humorous, exaggerated, and witty satire never in a direct, serious tone.',
       technologies: ['OpenAI', 'Vector Database', 'Retrieval-Augmented Generation', 'Hugging Face', 'Large Language Model', 'Prompt Engineering'],
       links: {
@@ -145,7 +148,7 @@ const Projects: React.FC = () => {
     {
       id: 8,
       title: 'AgriBuddy',
-      category: ['aai', 'ws'],
+      category: ['bnlp', 'aai', 'ws'],
       image: '/assets/img/research/agb.png',
       description: 'AI-powered agricultural assistant for Bangladeshi farmers using RAG and Vision Models',
       technologies: ['Python', 'Langchain', 'OpenAI', 'Faiss', 'CNN'],
@@ -159,7 +162,7 @@ const Projects: React.FC = () => {
     {
       id: 9,
       title: 'Bengali Speech Recognition with Regional Dialects',
-      category: ['nlp'],
+      category: ['bnlp', 'nlp', 'spch'],
       image: '/assets/img/research/w2v2_char_tok.png',
       description: "My master’s thesis involved building a regional speech corpus and fine‐tuning Wav2Vec2 for Bengali dialect transcription. The project led to a datathon using a dataset checkpoint, after which I fine‐tuned a Whisper model and deployed it on HuggingFace Space.",
       technologies: ['Python', 'PyTorch', 'HuggingFace', 'Wav2Vec2', 'Whisper', 'ASR'],
@@ -175,7 +178,7 @@ const Projects: React.FC = () => {
     {
       id: 10,
       title: 'Automatic Bengali Transcription System',
-      category: ['nlp'],
+      category: ['bnlp', 'nlp', 'spch'],
       image: 'https://tds-images.thedailystar.net/sites/default/files/styles/social_share/public/images/2022/11/18/zoom_virtual_background.jpg',
       description: 'A robust Bangla speech recognition system has been prototyped, achieving exceptional transcription accuracy. We are now in the deployment phase, aiming to provide a user‐friendly web interface for generating CSV/Excel outputs from audio inputs',
       technologies: ['Python', 'Automatic Speech Recognition', 'Whisper', 'Hugging Face'],

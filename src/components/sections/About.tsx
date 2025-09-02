@@ -163,33 +163,35 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
             
-            <div style={{
+            <div className="card" style={{
               marginTop: '25px',
-              marginLeft: '-450px', /* Extended much further to the left to match screenshot */
-              marginRight: '8px', 
-              width: 'calc(100% + 450px)', /* Ensure width adjusts with the negative margin */
-              padding: '20px',
+              marginLeft: '-15px',
+              marginRight: '15px',
+              width: 'calc(100% + 15px)',
               background: 'var(--surface-color)',
-              borderRadius: '8px',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '8px'
             }}>
-              <p className="py-3" style={{
-                margin: '0',
-                fontSize: '16px',
-                lineHeight: '1.6',
-                color: 'var(--default-color)',
-                textAlign: 'justify'
-              }}>
-                Hey, I'm Md. Rezuwan Hassan. I am a curious mind and a heuristic learner who loves to explore and experiment with new technologies. 
-                I love to put my merit and skills to use in making the lives of general people easier by developing open-source technologies and contributing to advancing Bangla NLP research.
-                
-                {/* I completed both my B.Sc. in Electrical and Electronic Engineering and my M.Sc. in Computer Science and Engineering, specializing in Artificial Intelligence, at BRAC University. AI has been my passion for years, and I’m driven to contribute meaningfully across its many domains.
-                
-                My fascination with languages—especially my mother tongue, Bengali—started early. I’ve always found it to be grammatically intricate yet exquisitely beautiful, a quality that shines in classical literature and song lyrics. The elegance and melody of the language drew me naturally toward Natural Language Processing as my core research area.
-
-                Although Natural Language Processing is at the heart of my work, my curiosity extends into many other AI fields, including Computational Cognitive/Social Science, Human–Computer Interaction, Federated Learning, Meta-Learning, Reinforcement Learning, Healthcare/Medical AI, and Generative AI. */}
-
-              </p>
+              <div className="card-body p-4">
+                <p className="card-text" style={{
+                  margin: '0',
+                  fontSize: '16px',
+                  lineHeight: '1.6',
+                  color: 'var(--default-color)',
+                  textAlign: 'justify'
+                }}>
+                  Hey, I'm Md. Rezuwan Hassan. I am a curious mind and a heuristic learner who loves to explore and experiment with new technologies. 
+                  I love to put my merit and skills to use in making the lives of general people easier by developing open-source technologies and contributing to advancing Bangla NLP research.
+                </p>
+                {/* 
+                <p className="card-text mt-3">
+                  I completed both my B.Sc. in Electrical and Electronic Engineering and my M.Sc. in Computer Science and Engineering, specializing in Artificial Intelligence, at BRAC University. AI has been my passion for years, and I'm driven to contribute meaningfully across its many domains.
+                </p>
+                <p className="card-text mt-3">
+                  My fascination with languages—especially my mother tongue, Bengali—started early. I've always found it to be grammatically intricate yet exquisitely beautiful, a quality that shines in classical literature and song lyrics. The elegance and melody of the language drew me naturally toward Natural Language Processing as my core research area.
+                </p>
+                */}
+              </div>
             </div>
           </div>
         </div>

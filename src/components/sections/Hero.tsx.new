@@ -27,45 +27,41 @@ const Hero: React.FC = () => {
   return (
     <section 
       id="hero" 
-      className="hero position-relative"
+      className="hero d-flex align-items-center"
       style={{
         width: '100%',
-        minHeight: '100vh',
-        backgroundColor: '#1A1A1A'
+        minHeight: 'calc(100vh - 72px)', // Subtracting header height
+        backgroundColor: '#2A2A2A', // Lighter black/ash color
+        overflow: 'hidden',
+        padding: 0
       }}
     >
-      <Container fluid className="px-0">
-        <Row className="g-0 min-vh-100">
+      <Container fluid className="h-100 p-0">
+        <Row className="align-items-center h-100 g-0">
           {/* Left content column */}
-          <Col xs={12} lg={6} className="d-flex align-items-center">
+          <Col lg={6} className="pe-lg-5" data-aos="fade-right" data-aos-delay="100">
             <div style={{ 
-              paddingLeft: 'clamp(1rem, 5%, 3rem)',
-              paddingRight: 'clamp(1rem, 5%, 3rem)',
-              position: 'relative',
-              zIndex: 2,
-              paddingTop: '72px', // Header height
-              paddingBottom: '72px' // Footer height
+              paddingLeft: '5%',
+              maxWidth: '800px'
             }}>
               <h2 
-                className="hero-title"
                 style={{
+                  fontSize: '4rem',
                   fontWeight: 'bold',
                   color: '#FFFFFF',
-                  marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
+                  marginBottom: '1.5rem',
                   whiteSpace: 'nowrap',
-                  letterSpacing: '-0.02em',
-                  fontSize: 'clamp(2.5rem, 5vw, 4.5rem)'
+                  width: 'fit-content'
                 }}
               >
                 Md. Rezuwan Hassan
               </h2>
               <p 
-                className="hero-text"
                 style={{
+                  fontSize: '2rem',
                   color: '#FFFFFF',
-                  marginBottom: 'clamp(1.5rem, 2vw, 2rem)',
-                  lineHeight: '1.4',
-                  fontSize: 'clamp(1.5rem, 3vw, 2.5rem)'
+                  marginBottom: '2rem',
+                  lineHeight: '1.4'
                 }}
               >
                 I'm <span ref={typedRef} style={{borderBottom: '3px solid #20BEFF', paddingBottom: '2px'}}></span>
@@ -74,26 +70,17 @@ const Hero: React.FC = () => {
           </Col>
           
           {/* Right image column */}
-          <Col xs={12} lg={6} className="p-0">
-            <div 
-              className="sticky-top"
+          <Col lg={6} className="h-100 p-0" data-aos="fade-left" data-aos-delay="200">
+            <Image 
+              src="/assets/img/cover.jpg" 
+              alt="Profile"
+              className="h-100"
               style={{
-                height: 'calc(100vh - 144px)', // Viewport height minus header and footer
-                top: '72px', // Header height
-                zIndex: 3
+                width: '100%',
+                objectFit: 'contain',
+                objectPosition: 'center right'
               }}
-            >
-              <Image 
-                src="/assets/img/cover.jpg" 
-                alt="Profile"
-                style={{
-                  height: '100%',
-                  width: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'center'
-                }}
-              />
-            </div>
+            />
           </Col>
         </Row>
       </Container>
