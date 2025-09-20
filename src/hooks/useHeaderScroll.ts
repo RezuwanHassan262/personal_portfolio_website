@@ -8,10 +8,21 @@ export const useHeaderScroll = () => {
   useEffect(() => {
     const update = () => {
       const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollYRef.current && currentScrollY > 100) {
-        setIsHeaderHidden(true);
-      } else if (currentScrollY < lastScrollYRef.current) {
+      
+      // Check if mobile menu is open (Bootstrap adds 'show' class when navbar is expanded)
+      const isMobileMenuOpen = document.querySelector('.navbar-collapse.show') !== null;
+      
+      // Don't hide header if mobile menu is open or on mobile devices
+      const isMobile = window.innerWidth <= 991;
+      
+      if (!isMobileMenuOpen && !isMobile) {
+        if (currentScrollY > lastScrollYRef.current && currentScrollY > 100) {
+          setIsHeaderHidden(true);
+        } else if (currentScrollY < lastScrollYRef.current) {
+          setIsHeaderHidden(false);
+        }
+      } else {
+        // Always show header on mobile or when menu is open
         setIsHeaderHidden(false);
       }
 
@@ -26,8 +37,18 @@ export const useHeaderScroll = () => {
       }
     };
 
+    const handleResize = () => {
+      // Reset header state on resize
+      setIsHeaderHidden(false);
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return isHeaderHidden;

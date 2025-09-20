@@ -18,11 +18,22 @@
 /* For very small screens */
 @media (max-width: 575.98px) {
   .hero-title {
-    font-size: 2rem !important;
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
   }
   
   .hero-text {
-    font-size: 1.25rem !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+/* For small to medium screens */
+@media (max-width: 767.98px) {
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.15 !important;
   }
 }
 

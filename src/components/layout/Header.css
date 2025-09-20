@@ -29,4 +29,14 @@
   .navbar-nav .nav-link {
     padding: 10px 0 !important;
   }
+  
+  /* Ensure mobile menu stays in place */
+  .navbar-collapse.show {
+    position: static !important;
+  }
+  
+  /* Prevent header transform when mobile menu is open */
+  .navbar-collapse.show ~ .header-hidden {
+    transform: none !important;
+  }
 }

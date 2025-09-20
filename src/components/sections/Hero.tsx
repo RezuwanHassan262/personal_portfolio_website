@@ -52,9 +52,11 @@ const Hero: React.FC = () => {
                   fontWeight: 'bold',
                   color: '#FFFFFF',
                   marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
-                  whiteSpace: 'nowrap',
                   letterSpacing: '-0.02em',
-                  fontSize: 'clamp(2.5rem, 5vw, 4.5rem)'
+                  fontSize: 'clamp(2rem, 5vw, 4.5rem)',
+                  lineHeight: '1.1',
+                  wordBreak: 'break-word',
+                  hyphens: 'auto'
                 }}
               >
                 Md. Rezuwan Hassan

@@ -5,7 +5,7 @@ const AboutSection: React.FC = () => {
     <section id="about" className="about section" style={{ overflow: 'hidden' }}>
       <div className="container" data-aos="fade-up" data-aos-delay="100" style={{ position: 'relative' }}>
         <div className="row gy-4 justify-content-center">
-          <div className="col-lg-4">
+          <div className="col-lg-5">
             <div style={{
               height: 'fit-content',
               display: 'flex',
@@ -26,7 +26,7 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="col-lg-8 content" style={{ overflow: 'visible', position: 'relative' }}>
+          <div className="col-lg-7 content" style={{ overflow: 'visible', position: 'relative' }}>
             <div style={{
               marginBottom: '30px'
             }}>
@@ -83,8 +83,7 @@ const AboutSection: React.FC = () => {
                   {[
                     { label: 'Birthday', value: '20 August, 1995' },
                     { label: 'Website', value: 'https://rezuwan262.vercel.app/' },
-                    { label: 'Phone/WhatsApp', value: '+8801735066946' },
-                    { label: 'City', value: 'Dhaka, Bangladesh' }
+                    { label: 'Phone/WhatsApp', value: '+8801735066946' }
                   ].map((item, index) => (
                     <li key={index} style={{
                       marginBottom: '12px',
@@ -125,10 +124,9 @@ const AboutSection: React.FC = () => {
                   marginBottom: '20px'
                 }}>
                   {[
-                    { label: 'Age', value: '30' },
                     { label: 'Education', value: 'Masters' },
                     { label: 'Email', value: 'rezwanhasan262@gmail.com' },
-                    { label: 'Profession', value: 'AI Engineer' }
+                    { label: 'City', value: 'Dhaka, Bangladesh' }
                   ].map((item, index) => (
                     <li key={index} style={{
                       marginBottom: '12px',
@@ -164,7 +162,7 @@ const AboutSection: React.FC = () => {
             </div>
             
             <div className="card" style={{
-              marginTop: '25px',
+              marginTop: '10px',
               marginLeft: '-15px',
               marginRight: '15px',
               width: 'calc(100% + 15px)',
