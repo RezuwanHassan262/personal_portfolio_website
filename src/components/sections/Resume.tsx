@@ -18,8 +18,10 @@ interface SimpleResumeItem {
   logoAlt?: string;
 }
 
+type TabType = 'experience' | 'education' | 'achievement' | 'volunteering' | 'awards';
+
 const Resume: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'experience' | 'education' | 'achievement' | 'volunteering' | 'awards'>('experience');
+  const [activeTab, setActiveTab] = useState<TabType>('experience');
   const [modalImage, setModalImage] = useState<string | null>(null);
   const [modalAlt, setModalAlt] = useState<string>('');
   const [currentGalleryImages, setCurrentGalleryImages] = useState<MediaItem[]>([]);
@@ -31,29 +33,44 @@ const Resume: React.FC = () => {
       title: "Artificial Intelligence (AI) Engineer",
       company: "RoboFication LLC",
       companyUrl: "http://robofication.net/",
-      logo: "https://media.licdn.com/dms/image/v2/D560BAQG0Bzg2J3J4FQ/company-logo_200_200/company-logo_200_200/0/1722983644704?e=1758153600&v=beta&t=fN4fq6PZU8uB5-JXyihyRNroksDJueG7rm33v8V01BI",
+      logo: "/assets/img/others/RoboFicationLogo.png",
       logoAlt: "RoboFication LLC logo",
       employmentType: "Full-Time",
       locationType: "Remote",
       location: "Canton, Michigan, United States",
-      period: "March, 2025 - Present",
-      description: "RoboFication LLC is an US-based (Canton, Michigan) company that specializes in automating systems engineering and certification processes for safety-critical industries like automotive, aerospace, defense, and robotics using AI and Formal Methods. Their AI-powered tools enhance efficiency by automating safety analyses, generating precise requirements, and ensuring regulatory compliance. From AI-driven SysML generation to real-time collaboration, RoboFication LLC enhances efficiency and safety.",
-      responsibilities: [
-        "Develop AI-driven automation tools for safety-critical industries",
-        "Incorporate advanced AI techniques to enhance existing systems",
-        "Develop natural language processing capabilities for system comprehension",
-        "Integrate AI functionalities into current applications",
-        "Design and automate workflows to minimize repetitive tasks",
-        "Collaborate with the team on various projects"
-      ]
+      period: "July, 2025 - Present",
+      description: "RoboFication LLC is an US-based (Canton, Michigan) company that specializes in automating systems engineering and certification processes for safety-critical industries like automotive, aerospace, defense, and robotics using AI and Formal Methods. Their AI-powered tools enhance efficiency by automating safety analyses, generating precise requirements, and ensuring regulatory compliance.",
+
     },
 
     {
       id: 2,
+      title: "Junior AI Engineer",
+      company: "RoboFication LLC",
+      companyUrl: "http://robofication.net/",
+      logo: "/assets/img/others/RoboFicationLogo.png",
+      logoAlt: "RoboFication LLC logo",
+      employmentType: "Full-Time",
+      locationType: "Remote",
+      location: "Canton, Michigan, United States",
+      period: "March, 2025 - July, 2025",
+      description: "",
+      responsibilities: [
+        "Develop AI-driven automation tools for safety-critical industries",
+        "Learn and implement advanced AI techniques to enhance existing systems",
+        "Assist in developing natural language processing capabilities",
+        "Support integration of AI functionalities into current applications",
+        "Help design and automate workflows to minimize repetitive tasks",
+        "Collaborate with senior team members on various projects"
+      ]
+    },
+
+    {
+      id: 3,
       title: "Research Engineer",
       company: "BRAC University",
       companyUrl: "https://www.bracu.ac.bd/",
-      logo: "https://media.licdn.com/dms/image/v2/C510BAQGLfIJZJcC3rQ/company-logo_200_200/company-logo_200_200/0/1631312895616?e=1758153600&v=beta&t=mLXMbe5WZtzauJr_5uRpQzlRgo3zD1O8zkujk-lsEkw",
+      logo: "/assets/img/others/BRACUniversityLogo.png",
       logoAlt: "BRAC University logo",
       employmentType: "Full-Time",
       locationType: "Hybrid",
@@ -89,7 +106,7 @@ const Resume: React.FC = () => {
     },
 
     {
-      id: 3,
+      id: 4,
       title: "Freelance Data Scientist",
       company: "Freelance",
       companyUrl: "",
@@ -105,11 +122,11 @@ So far, I have pulled off a substantial amount of gigs/tasks given to me by clie
     },
 
        {
-      id: 4,
+      id: 5,
       title: "Instructor",
       company: "Lead Academy",
       companyUrl: "https://www.lead.academy/",
-      logo: "https://media.licdn.com/dms/image/v2/C560BAQEVTJ4dcwdP_g/company-logo_200_200/company-logo_200_200/0/1660997818720?e=1758153600&v=beta&t=c3p67_LZJbsvvMCl9ptSSonT_ZNGiVO47ImnKrFQPVA",
+      logo: "/assets/img/others/LeadAcademyLogo.jpg",
       logoAlt: "Lead Academy logo",
       employmentType: "Full-Time",
       locationType: "Hybrid",
@@ -122,11 +139,11 @@ Apart from covering the theories, I also demonstrated the concepts practically u
     },
 
            {
-      id: 5,
+      id: 6,
       title: "Coding Instructor",
       company: "Learn Time",
       companyUrl: "https://www.learntime.com.bd/math",
-      logo: "https://images.clickfunnels.com/cdn-cgi/image/width=600,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/workspace/JMBYmY/image/10386400/file/2d487c4f1b68dbc679a2a6a6c12a4e7c.png",
+      logo: "/assets/img/others/learntimeLogo.jpg",
       logoAlt: "Learn Time logo",
       employmentType: "Part-Time",
       locationType: "Remote",
@@ -142,11 +159,11 @@ Apart from covering the theories, I also demonstrated the concepts practically u
     },
 
     {
-      id: 6,
+      id: 7,
       title: "Chief Author & Coordinator (Music Segment)",
       company: "নিয়ন আলোয় - Neon Aloy",
       companyUrl: "https://www.linkedin.com/company/neonaloy/posts/?feedView=all",
-      logo: "https://media.licdn.com/dms/image/v2/C560BAQHdIeTqRknL4Q/company-logo_200_200/company-logo_200_200/0/1630611693418/neonaloy_logo?e=1758153600&v=beta&t=qhpZc85HfQ6wUL6XJH-gf7wNpFqFKzive6jDBS3ea2k",
+      logo: "/assets/img/others/neonaloy_logo.jpg",
       logoAlt: "Neon Aloy logo",
       employmentType: "Part-Time",
       locationType: "Remote",
@@ -164,6 +181,16 @@ Apart from covering the theories, I also demonstrated the concepts practically u
     }
   ];
 
+  // Group experiences by company
+  const groupedExperiences = experienceData.reduce((acc, exp) => {
+    const companyName = exp.company;
+    if (!acc[companyName]) {
+      acc[companyName] = [];
+    }
+    acc[companyName].push(exp);
+    return acc;
+  }, {} as Record<string, typeof experienceData>);
+
   const educationData = [
     {
       id: 1,
@@ -171,7 +198,7 @@ Apart from covering the theories, I also demonstrated the concepts practically u
       field: "Computer Science Engineering",
       institution: "BRAC University",
       location: "Dhaka, Bangladesh",
-      logo: "https://media.licdn.com/dms/image/v2/C510BAQGLfIJZJcC3rQ/company-logo_200_200/company-logo_200_200/0/1631312895616?e=1758153600&v=beta&t=mLXMbe5WZtzauJr_5uRpQzlRgo3zD1O8zkujk-lsEkw",
+      logo: "/assets/img/others/BRACUniversityLogo.png",
       logoAlt: "BRAC University logo",
       period: "2021 - 2023",
       thesis: {
@@ -201,7 +228,7 @@ Apart from covering the theories, I also demonstrated the concepts practically u
       field: "Electrical and Electronics Engineering",
       institution: "BRAC University",
       location: "Dhaka, Bangladesh",
-      logo: "https://media.licdn.com/dms/image/v2/C510BAQGLfIJZJcC3rQ/company-logo_200_200/company-logo_200_200/0/1631312895616?e=1758153600&v=beta&t=mLXMbe5WZtzauJr_5uRpQzlRgo3zD1O8zkujk-lsEkw",
+      logo: "/assets/img/others/BRACUniversityLogo.png",
       logoAlt: "BRAC University logo",
       period: "2016 - 2020",
       thesis: {
@@ -229,7 +256,7 @@ Apart from covering the theories, I also demonstrated the concepts practically u
         "EEE243: Signal and Systems",
         "EEE301 | EEE302: Digital Electronics | Digital Electronics Laboratory",
         "EEE305 | EEE306: Control Systems | Control Systems Laboratory",
-        "EEE341 | EEE342: Introduction to Communication Engineering | Laboratory",
+        "EEE341 | EEE342: Introduction to Communication Engineering | Introduction to Communication Engineering Laboratory",
         "EEE343 | EEE344: Digital Signal Processing | Digital Signal Processing Laboratory",
         "EEE361 | EEE362: Data Communication | Data Communication Laboratory",
         "EEE365 | EEE366: Microprocessor and Interfacing | Microprocessor and Interfacing Laboratory",
@@ -287,19 +314,19 @@ Apart from covering the theories, I also demonstrated the concepts practically u
           alt: "AI Hackathon Presentation" 
         },
         { 
-          src: "https://media.licdn.com/dms/image/v2/D5622AQHi4NX7PieWQw/feedshare-shrink_2048_1536/B56ZchU_8PGoAs-/0/1748610843065?e=1758153600&v=beta&t=HyQk4VFJfRMu5Sl9aoVdhvUaYMpHVHVsD94FL1S_7Ug", 
+          src: "/assets/img/others/ht3.jpg", 
           alt: "AI Hackathon Award Ceremony" 
         },
         { 
-          src: "https://media.licdn.com/dms/image/v2/D5622AQGpzzV4RWptaA/feedshare-shrink_1280/B56ZchU_8QHgAk-/0/1748610843198?e=1758153600&v=beta&t=W7X3xK-x9uRc8ny-FKqD5wBRrA_vfk5vsb9oyD5tlbM", 
+          src: "/assets/img/others/ht4.jpg", 
           alt: "AI Hackathon Team Discussion" 
         },
         { 
-          src: "https://media.licdn.com/dms/image/v2/D5622AQGLiESZlMBzNQ/feedshare-shrink_1280/B56ZchU_8UG0Ak-/0/1748610843102?e=1758153600&v=beta&t=lFzLesgvFeJ4b9nX8Qc-7WLnQpd6RwZIsioleGSGQ5k", 
+          src: "/assets/img/others/ht5.jpg", 
           alt: "AI Hackathon Project Demo" 
         },
         { 
-          src: "https://media.licdn.com/dms/image/v2/D5622AQEdyJHwUByeWw/feedshare-shrink_1280/B56ZchU_8WGsAo-/0/1748610843391?e=1758153600&v=beta&t=hhHzkVACTmmtv7o3iJU-jzy86yJkaF0X35lNf5UW7qM", 
+          src: "/assets/img/others/ht6.jpg", 
           alt: "AI Hackathon Final Results" 
         }
       ]
@@ -401,7 +428,7 @@ Apart from covering the theories, I also demonstrated the concepts practically u
       id: 1,
       title: "AI/ML Researcher | Assistant Co-ordinator",
       shortDescription: "Bengali.AI",
-      logo: "https://media.licdn.com/dms/image/v2/C510BAQF5cMCsxWhRKg/company-logo_200_200/company-logo_200_200/0/1631435147750/bengali_ai_logo?e=1758153600&v=beta&t=LkwNLfkf6RvHuhmySRsfsVx6dZEYLIHClTngBRLw9Jw",
+      logo: "assets/img/others/bai_logo.PNG",
       logoAlt: "Bengali.AI logo",
       description: `<p>Founded in 2018, Bengali.AI has been developing open-source AI language tools & technologies for the Bengali language for common people to use as well as resources for both deep learning and linguistic researchers to comprehend and understand the language better from both computational and linguistic aspects.</p>
 
@@ -842,20 +869,39 @@ images: [
         <div className="resume-content" data-aos="fade-up" data-aos-delay="100">
           {activeTab === 'experience' && (
             <div className="experience-section">
-              {experienceData.map((exp, index) => (
-                <div key={exp.id} className="resume-card" data-aos="fade-up" data-aos-delay={index * 100}>
-                  <div className="card-header">
-                    {exp.logo && (
-                      <div className="card-logo">
-                        <OptimizedImage
-                          src={exp.logo}
-                          alt={exp.logoAlt || `${exp.company} logo`}
-                          aspectRatio="1/1"
-                          objectFit="contain"
-                        />
-                      </div>
-                    )}
-                    <div className="card-info">
+              {(() => {
+                const groupedExperiences: { [key: string]: typeof experienceData } = {};
+                experienceData.forEach(exp => {
+                  if (!groupedExperiences[exp.company]) {
+                    groupedExperiences[exp.company] = [];
+                  }
+                  groupedExperiences[exp.company].push(exp);
+                });
+
+                return Object.entries(groupedExperiences).map(([company, experiences], companyIndex) => (
+                  <div key={company} className="resume-card company-group" data-aos="fade-up" data-aos-delay={companyIndex * 100}>
+                    {experiences.map((exp, positionIndex) => (
+                      <div key={exp.id} className="position-entry">
+                        {/* Divider line between positions (except for the first one) */}
+                        {positionIndex > 0 && (
+                          <div className="position-divider">
+                            <hr className="role-separator" />
+                          </div>
+                        )}
+                        
+                        <div className="card-header">
+                          {/* Show logo only for the first position in each company */}
+                          {exp.logo && positionIndex === 0 && (
+                            <div className="card-logo">
+                              <OptimizedImage
+                                src={exp.logo}
+                                alt={exp.logoAlt || `${exp.company} logo`}
+                                aspectRatio="1/1"
+                                objectFit="contain"
+                              />
+                            </div>
+                          )}
+                          <div className="card-info">
                       <h3 className="card-title">{exp.title}</h3>
                       <h4 className="card-company">
                         {exp.companyUrl ? (
@@ -935,9 +981,12 @@ images: [
                         </ul>
                       </div>
                     )}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                </div>
-              ))}
+                ));
+              })()}
             </div>
           )}
 

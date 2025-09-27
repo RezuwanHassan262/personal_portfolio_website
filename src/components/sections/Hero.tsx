@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
   useEffect(() => {
     if (typedRef.current) {
       const typed = new Typed(typedRef.current, {
-        strings: ['an Engineer', 'a Researcher', 'an Artist'],
+        strings: ['a Researcher', 'an Engineer', 'an Artist'],
         typeSpeed: 50,
         backSpeed: 50,
         backDelay: 2000,

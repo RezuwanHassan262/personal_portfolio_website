@@ -1556,15 +1556,46 @@ section,
   
   .card-title {
     font-size: 1.2rem;
+    line-height: 1.3;
   }
   
   .card-company {
     font-size: 1rem;
+    line-height: 1.4;
   }
   
-  .card-meta {
+  .employment-details {
     flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+  
+  /* Combine meta and period on same line for mobile */
+  .card-meta {
+    display: inline;
+    margin-bottom: 0;
+  }
+  
+  .card-meta span {
+    line-height: 1.4;
+  }
+  
+  .separator {
+    display: inline-block;
+    margin: 0 4px;
+  }
+  
+  .card-period {
+    display: inline;
+    margin-top: 0;
+    margin-left: 4px;
+    line-height: 1.4;
+  }
+  
+  .card-period::before {
+    content: " · ";
+    margin-right: 4px;
   }
   
   .tab-buttons {
@@ -1576,6 +1607,72 @@ section,
   .tab-button {
     justify-content: center;
   }
+}
+
+/* Additional mobile styles for very small screens */
+@media (max-width: 576px) {
+  .resume-card {
+    padding: 16px;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-company {
+    font-size: 0.95rem;
+  }
+  
+  .employment-details,
+  .card-meta,
+  .card-period {
+    font-size: 0.85rem;
+  }
+  
+  .card-meta {
+    gap: 4px;
+  }
+}
+
+/* Company group and position separator styles */
+.company-group {
+  position: relative;
+}
+
+.position-entry {
+  position: relative;
+}
+
+.position-divider {
+  margin: 25px 0;
+  padding: 0 20px;
+}
+
+.role-separator {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--default-color), transparent 60%) 20%,
+    color-mix(in srgb, var(--default-color), transparent 60%) 80%,
+    transparent 100%
+  );
+  margin: 0;
+}
+
+/* Adjust company header - show company name only once */
+.company-group .card-info h4.card-company {
+  display: block;
+}
+
+.company-group .position-entry:not(:first-child) .card-info h4.card-company {
+  display: none;
+}
+
+/* Adjust spacing for multiple positions */
+.company-group .position-entry:not(:first-child) .card-header {
+  padding-top: 0;
 }
 
 @media (max-width: 576px) {

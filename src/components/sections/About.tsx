@@ -81,7 +81,7 @@ const AboutSection: React.FC = () => {
                   marginBottom: '20px'
                 }}>
                   {[
-                    { label: 'Birthday', value: '20 August, 1995' },
+                    { label: 'Birthday', value: '20 August' },
                     { label: 'Website', value: 'https://rezuwan262.vercel.app/' },
                     { label: 'Phone/WhatsApp', value: '+8801735066946' }
                   ].map((item, index) => (
